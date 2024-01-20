@@ -1,0 +1,18 @@
+USERNAME = USER 1
+PASSWORD = 123
+CATEGORY: Health
+TASK: RUNNING
+DURATION: 30 minutes
+TASK: SLEEPING
+DURATION: 60 minutes
+TASK: MUSIC
+DURATION: 20 minutes
+
+TASKS:
+Category	Task			Duration
+-----------------------------------------------
+Health         RUNNING                       30 minutes
+Lifestyle      SLEEPING                      60 minutes
+Miscellaneous  MUSIC                         20 minutes
+Total productive time: 1 hours 50 minutes
+Total non-productive time: 22 hours 10 minutes
