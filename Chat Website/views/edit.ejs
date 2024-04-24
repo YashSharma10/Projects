@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit your chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #202124;
+            /* Dark background color */
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            /* Text color for dark theme */
+            text-align: center;
+            /* Center-align content */
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #444;
+            /* Darker border color */
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background-color: #d5e3f3;
+            /* Darker input background color */
+            color: #fff;
+            /* Text color for dark theme */
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        textarea:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none; /* Remove border */
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            background-color: #007bff; /* Match background color with other buttons */
+            color: #fff; /* Text color for dark theme */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <p>Edit your chat: <%= chat._id %></p>
+    <p>This chat was sent from <b><%= chat.from %></b> to <b><%= chat.to %></b></p>
+    <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+        <textarea name="msg" rows="6" cols="50"><%= chat.msg %></textarea>
+        <br />
+        <button type="submit">Edit</button>
+    </form>
+</body>
+
+</html>

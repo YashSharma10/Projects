@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #202124;
+    /* Dark background color */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* Adjusted to full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container,
+.chat-container {
+    max-width: 800px;
+    background-color: #2c2f33;
+    /* Darker chat container background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: slideIn 2s ease forwards;
+    /* Adjusted animation duration */
+    opacity: 0;
+    transform: translateY(-50px);
+    position: relative;
+    /* Changed to relative */
+}
+
+.chat-container {
+    display: none;
+    color: #fff;
+    /* Text color for dark theme */
+    text-align: center;
+    /* Center-align the chat option */
+    font-size: 24px;
+    /* Increase font size for better visibility */
+}
+
+.chat-container.active {
+    display: block;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
+.chat-container h3 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: #eee;
+    /* Header text color for dark theme */
+}
+
+.chat-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-form input,
+.chat-form textarea,
+.chat-form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #444;
+    /* Darker border color */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: #333;
+    /* Darker input background color */
+    color: #fff;
+    /* Text color for dark theme */
+}
+
+.chat-form input:focus,
+.chat-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.chat-form button {
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-form button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

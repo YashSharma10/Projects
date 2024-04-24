@@ -1,0 +1,70 @@
+//main work  is done in index.js
+chat.js mai basic model create krne ke liye use kr rhe --- in which we define our schema 
+
+chats we have ---- (_id , from , to , message , created at)
+
+_id itself genereted by mongoose , string typoe for next three , created at of Date type 
+
+//so basic schema is defined in chatSchema and type,maxlength are its consttraints 
+
+//required true  fir all except mssg as mssg khali ho skta hai , bakki sab nhi 
+
+//niw create model chat 
+
+now exoport it and import it in index.js 
+
+still show dbs will not show whatsapp database as we havent inserted anythung yet , so go to index.js and insert something in the model 
+
+
+TRY SENDING A SAMPLE IN IT 
+
+let chat1 = new Chat({
+    from:"a".
+    to:"b",
+    message:"send",
+    created_at: new Date() 
+})
+
+--- here is chat 
+
+chat1.save().then((res) =>{
+    console.log(res)
+}) --- save it and see output in console also and then see on show dbs ans show collections and db.chats.find() in shell
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------=
+
+create init.js  --- databse ko intialise krne ka code likhenge
+
+
+CRETAE INDEX ROUTE /GET /chats ----- to show all chats 
+
+NEW AND CREATE ROUTE --- NEW CHAT ----- GET /chats/new ------- submit form --- POST --- /chats ---- POST REQUEST KA KAAM HOGA DATABSE KE ANDER USS NAYI CHAT KO INSERT KRNA
+
+
+-------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+to get just the mins/time from the date --
+go to index.ejs
+
+chat.created_at -- will give new date .toString() --converts it to string --- split kro string ko space ke basis pr and as hamein 4th index wale dta ko print krana hai so we wrtoe [4] to get the time out of it 
+
+now3 do slice(0,4) -- for first 3 indexes together and then join them with space / -  to get date 
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+EDIT AND UPDATE ROUTE  --- edit button ---- GET /chats/:id/edit -- submit form --- PUT REQUEST -- /chats/:id --- PUT RENAMEUEST HAMARE DATABASE KO UPDATE KREGI
+
+
+DESTROY ROUTE ---- DELETE BUTTON --- DELETE /chats/:id 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+ALWAYS FIRST RUN THW init.js file AND THEN THE MAIN INDEX.JS FILE AS INIT.JS CONATINS THE DSTABSE AND CODE FOR IT TO GET STROED ON SHELL , AND THEN WE USE INDEX.JS TO USE IT 
